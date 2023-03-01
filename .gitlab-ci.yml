@@ -23,9 +23,6 @@ test_unit_job:
     - mongo:latest
   script:
     - ruby simpletest.rb
-  script:
-    - echo 'Testing 1'
-
 
 test_integration_job:
   stage: test

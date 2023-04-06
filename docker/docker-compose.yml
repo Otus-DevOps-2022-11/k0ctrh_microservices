@@ -9,7 +9,7 @@ services:
     environment:
       - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
   ui:
-    image: ${USERNAME}/ui:${UI_VER}
+    image: ${USER_NAME}/ui:${UI_VER}
     ports:
       - ${UI_PORT}:9292/tcp
     networks:
@@ -38,14 +38,14 @@ services:
     environment:
       - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
   comment:
-    image: ${USERNAME}/comment:${COMMENT_VER}
+    image: ${USER_NAME}/comment:${COMMENT_VER}
     networks:
       - front_net
       - back_net
     environment:
       - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
   prometheus:
-    image: ${USERNAME}/prometheus
+    image: ${USER_NAME}/prometheus
     ports:
       - '9090:9090'
     volumes:
